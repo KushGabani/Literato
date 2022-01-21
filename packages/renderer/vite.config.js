@@ -1,43 +1,43 @@
 /* eslint-env node */
 
-import {chrome} from '../../.electron-vendors.cache.json';
-import {join} from 'path';
-import {builtinModules} from 'module';
+import { chrome } from "../../.electron-vendors.cache.json"
+import { join } from "path"
+import { builtinModules } from "module"
 
-const PACKAGE_ROOT = __dirname;
+const PACKAGE_ROOT = __dirname
 
 const config = {
   mode: process.env.MODE,
   root: PACKAGE_ROOT,
   resolve: {
     alias: {
-      '/@/': join(PACKAGE_ROOT, 'src') + '/',
-    },
+      "/@/": join(PACKAGE_ROOT, "src") + "/"
+    }
   },
   plugins: [],
-  base: '',
+  base: "",
   server: {
     fs: {
-      strict: true,
-    },
+      strict: true
+    }
   },
   build: {
     sourcemap: true,
     target: `chrome${chrome}`,
-    outDir: 'dist',
-    assetsDir: '.',
+    outDir: "dist",
+    assetsDir: ".",
     rollupOptions: {
-      input: 'index.html',
+      input: "index.html",
       external: [
-        ...builtinModules.flatMap(p => [p, `node:${p}`]),
-      ],
+        ...builtinModules.filter(m => m !== "process" && m !== "assert")
+      ]
     },
     emptyOutDir: true,
-    brotliSize: false,
+    brotliSize: false
   },
   test: {
-    environment: 'happy-dom',
-  },
-};
+    environment: "happy-dom"
+  }
+}
 
-export default config;
+export default config

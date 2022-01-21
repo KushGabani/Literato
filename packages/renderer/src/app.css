@@ -1,4 +1,25 @@
 .app-wrapper {
-  text-align: center;
-  color: white;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.editor-wrapper {
+  height: 100%;
+  flex: 0 0 50%;
+}
+
+.preview-wrapper.markdown-body {
+  flex: 0 0 50%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  color: #abb2bf;
+  padding: 12px;
+}
+
+.preview-wrapper.markdown-body pre {
+  background-color: rgba(27, 31, 35, 0.45);
 }

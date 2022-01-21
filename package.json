@@ -1,5 +1,5 @@
 {
-  "name": "Literato",
+  "name": "literato",
   "private": true,
   "repository": {
     "type": "git",
@@ -50,14 +50,10 @@
     "@types/electron-devtools-installer": "^2.2.0",
     "@types/react": "^17.0.17",
     "@types/react-dom": "^17.0.9",
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
     "cross-env": "^7.0.3",
     "electron": "^13.1.9",
     "electron-builder": "^22.11.7",
     "electron-devtools-installer": "^3.2.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
     "lint-staged": "^11.1.2",
     "simple-git-hooks": "^2.5.1",
     "spectron": "^15.0.0",

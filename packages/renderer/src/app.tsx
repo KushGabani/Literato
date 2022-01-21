@@ -1,15 +1,21 @@
-import React, {useState} from "react";
+import "./components/shim"
+import React, { useCallback, useState } from "react"
 import "./app.css"
+import Editor from "./components/editor"
+import Preview from "./components/preview"
 
 const App: React.FC = () => {
-  const [count, setCount] = useState(0);
+  const [doc, setDoc] = useState<string>("# Hello World")
+
+  const handleDocChange = useCallback(newDoc => {
+    setDoc(newDoc)
+  }, [])
+
   return (
     <div className={"app-wrapper"}>
-      <h1>Hello Vite + React!</h1>
-      <p>Counter: {count}</p>
-      <button onClick={() => setCount(prevState => prevState + 1)}>
-        Increment
-      </button>
+      <Editor onChange={handleDocChange} initialDoc={doc} />
+      <div className={"separator"} />
+      <Preview doc={doc} />
     </div>
   )
 }
