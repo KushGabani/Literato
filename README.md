@@ -157,7 +157,7 @@ writeFile()
 
 To use external modules in Renderer you **must** describe the interface in the `packages/preload` where Node.js api is allowed:
 ```ts
-// packages/preload/src/index.ts
+// packages/preload/src/index.tsx
 import type {BinaryLike} from 'crypto';
 import {createHash} from 'crypto';
 

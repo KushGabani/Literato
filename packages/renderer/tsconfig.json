@@ -7,12 +7,11 @@
     "skipLibCheck": true,
     "strict": true,
     "isolatedModules": true,
-
-    // Don't automatically include anything.
-    // Only include `@types` packages that we need to import.
     "types" : [],
 
     "baseUrl": ".",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "/@/*": [
         "./src/*"
@@ -22,7 +21,6 @@
   },
 
   "include": [
-    "src/**/*.vue",
     "src/**/*.ts",
     "src/**/*.tsx",
     "types/**/*.d.ts",
